@@ -22,8 +22,8 @@ import { FormKit } from '@formkit/vue'
                     <FormKit type="email" label="Email" placeholder="Email del cliente" validation="required|email"
                         :validation-messages="{ required: 'El email del cliente es obligatorio', email: 'Coloca un email válido' }" />
 
-                    <FormKit type="text" label="Teléfono" placeholder="Teléfono XXX-XXX-XXX" validation="required"
-                        :validation-messages="{ required: 'El teléfono del cliente es obligatorio' }" />
+                    <FormKit type="text" label="Teléfono" placeholder="Teléfono XXX-XXX-XXX" validation="?matches:/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/"
+                        :validation-messages="{ required: 'El teléfono del cliente es obligatorio', matches:'El formato no es válido.' }" />
                 </FormKit>
             </div>
         </div>
