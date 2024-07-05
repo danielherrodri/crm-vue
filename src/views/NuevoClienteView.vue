@@ -12,7 +12,8 @@ import { FormKit } from '@formkit/vue'
 
         <div class="mx-auto mt-10 bg-white shadow">
             <div class="mx-auto md:w-2/3 py-20 px-6">
-                <FormKit type="form">
+                <FormKit type="form" submit-label="Agregar Cliente"
+                    incomplete-message="No se pudo enviar, revisa los mensajes.">
                     <FormKit type="text" label="Nombre" placeholder="Nombre del cliente" validation="required"
                         :validation-messages="{ required: 'El nombre del cliente es obligatorio' }" />
 
@@ -22,8 +23,14 @@ import { FormKit } from '@formkit/vue'
                     <FormKit type="email" label="Email" placeholder="Email del cliente" validation="required|email"
                         :validation-messages="{ required: 'El email del cliente es obligatorio', email: 'Coloca un email válido' }" />
 
-                    <FormKit type="text" label="Teléfono" placeholder="Teléfono XXX-XXX-XXX" validation="?matches:/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/"
-                        :validation-messages="{ required: 'El teléfono del cliente es obligatorio', matches:'El formato no es válido.' }" />
+                    <FormKit type="text" label="Teléfono" placeholder="Teléfono XXX-XXX-XXX"
+                        validation="?matches:/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/"
+                        :validation-messages="{ required: 'El teléfono del cliente es obligatorio', matches: 'El formato no es válido.' }" />
+
+                    <FormKit type="text" label="Empresa" placeholder="Empresa del cliente" />
+
+                    <FormKit type="text" label="Puesto" placeholder="Puesto del cliente" />
+
                 </FormKit>
             </div>
         </div>
@@ -32,6 +39,6 @@ import { FormKit } from '@formkit/vue'
 
 <style>
 .formkit-wrapper {
-    max-width: 100%;
+    max-width: 100% !important;
 }
 </style>
