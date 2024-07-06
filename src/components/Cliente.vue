@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from 'vue';
 import { RouterLink } from 'vue-router';
-defineEmits(['actualizar-estado'])
+defineEmits(['actualizar-estado', 'eliminar-cliente'])
 const props = defineProps({
     cliente: {
         type: Object
@@ -34,7 +34,8 @@ const estadoCliente = computed(() => {
             <RouterLink :to="{ name: 'editar-cliente', params: { id: cliente.id } }"
                 class="text-indigo-600 hover:text-indigo-900 mr-5">Editar
             </RouterLink>
-            <button class="text-red-600 hover:text-red-900">Elimninar</button>
+            <button class="text-red-600 hover:text-red-900"
+                @click="$emit('eliminar-cliente', cliente.id)">Elimninar</button>
         </td>
     </tr>
 </template>

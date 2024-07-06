@@ -1,34 +1,3 @@
 {
-  "clientes": [
-    {
-      "nombre": "Daniel",
-      "apellido": "Rodriguez Herrera",
-      "email": "daniel199907@gmail.com",
-      "telefono": "777-503-7364",
-      "empresa": "izzi Telecom",
-      "puesto": "Desarrollador fullstack",
-      "estado": true,
-      "id": "b8ea"
-    },
-    {
-      "nombre": "Miguel",
-      "apellido": "Rodriguez Herrera",
-      "email": "daniel199907@gmail.com",
-      "telefono": "777-503-7364",
-      "empresa": "izzi Telecom",
-      "puesto": "Desarrollador fullstack",
-      "estado": true,
-      "id": "7e3b"
-    },
-    {
-      "id": "b874",
-      "nombre": "Magaly Amairani",
-      "apellido": "Rodriguez Herrera",
-      "email": "maga_ama_93@hotmail.com",
-      "telefono": "777-428-0492",
-      "empresa": "FID TEATROS",
-      "puesto": "Contador Público",
-      "estado": true
-    }
-  ]
+  "clientes": []
 }
