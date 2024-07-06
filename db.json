@@ -7,7 +7,8 @@
       "email": "daniel199907@gmail.com",
       "telefono": "777-503-7364",
       "empresa": "izzi Telecom",
-      "puesto": "Desarrollador fullstack"
+      "puesto": "Desarrollador fullstack",
+      "estado": 1
     },
     {
       "id": "7e3b",
@@ -16,7 +17,18 @@
       "email": "daniel199907@gmail.com",
       "telefono": "777-503-7364",
       "empresa": "izzi Telecom",
-      "puesto": "Desarrollador fullstack"
+      "puesto": "Desarrollador fullstack",
+      "estado": 1
+    },
+    {
+      "id": "b874",
+      "nombre": "Magaly Amairani",
+      "apellido": "Rodriguez Herrera",
+      "email": "maga_ama_93@hotmail.com",
+      "telefono": "777-428-0492",
+      "empresa": "FID TEATROS",
+      "puesto": "Contador Público",
+      "estado": 1
     }
   ]
 }
