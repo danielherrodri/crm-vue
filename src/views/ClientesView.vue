@@ -15,6 +15,14 @@ onMounted(() => {
 const existenClientes = computed(() => {
     return clientes.value.length > 0;
 });
+const actualizarEstado = ({ id, estado }) => {
+    ClienteService.cambiarEstado(id, { estado: !estado })
+        .then(() => {
+            const i = clientes.value.findIndex(cliente => cliente.id === id);
+            clientes.value[i].estado = !estado;
+        })
+        .catch((error) => console.log((error)));
+}
 </script>
 <template>
     <div>
@@ -46,7 +54,8 @@ const existenClientes = computed(() => {
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-200 bg-white">
-                            <Cliente v-for="cliente in clientes" :key="cliente.id" :cliente="cliente" />
+                            <Cliente @actualizar-estado="actualizarEstado" v-for="cliente in clientes" :key="cliente.id"
+                                :cliente="cliente" />
                         </tbody>
                     </table>
                 </div>

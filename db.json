@@ -7,7 +7,7 @@
       "telefono": "777-503-7364",
       "empresa": "izzi Telecom",
       "puesto": "Desarrollador fullstack",
-      "estado": 1,
+      "estado": true,
       "id": "b8ea"
     },
     {
@@ -17,7 +17,7 @@
       "telefono": "777-503-7364",
       "empresa": "izzi Telecom",
       "puesto": "Desarrollador fullstack",
-      "estado": 1,
+      "estado": true,
       "id": "7e3b"
     },
     {
@@ -28,7 +28,7 @@
       "telefono": "777-428-0492",
       "empresa": "FID TEATROS",
       "puesto": "Contador Público",
-      "estado": 1
+      "estado": true
     }
   ]
 }
