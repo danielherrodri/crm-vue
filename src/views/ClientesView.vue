@@ -4,6 +4,8 @@ import RouterLink from "../components/UI/RouterLink.vue";
 import Heading from "../components/UI/Heading.vue";
 import axios from "axios";
 
+import Cliente from '../components/Cliente.vue'
+
 const clientes = ref([]);
 onMounted(() => {
     axios("http://localhost:3000/clientes")
@@ -43,7 +45,9 @@ const existenClientes = computed(() => {
                                 </th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-gray-200 bg-white"></tbody>
+                        <tbody class="divide-y divide-gray-200 bg-white">
+                            <Cliente v-for="cliente in clientes" :key="cliente.id" :cliente="cliente" />
+                        </tbody>
                     </table>
                 </div>
             </div>
