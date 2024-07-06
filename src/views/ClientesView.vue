@@ -2,13 +2,13 @@
 import { onMounted, ref, computed } from "vue";
 import RouterLink from "../components/UI/RouterLink.vue";
 import Heading from "../components/UI/Heading.vue";
-import axios from "axios";
+import axios from "../lib/axios";
 
 import Cliente from '../components/Cliente.vue'
 
 const clientes = ref([]);
 onMounted(() => {
-    axios("http://localhost:3000/clientes")
+    axios("/clientes")
         .then(({ data }) => (clientes.value = data))
         .catch((error) => console.log(error));
 });
