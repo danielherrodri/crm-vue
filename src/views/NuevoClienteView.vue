@@ -10,7 +10,7 @@ const handleSubmit = (data) => {
     axios
         .post("http://localhost:3000/clientes", data)
         .then((respuesta) => {
-            router.push({ name: 'inicio' })
+            router.push({ name: 'listado-clientes' })
         })
         .catch((error) => console.log(error));
 };
@@ -18,7 +18,7 @@ const handleSubmit = (data) => {
 <template>
     <div>
         <div class="flex justify-end">
-            <RouterLink to="inicio">Ir a inicio</RouterLink>
+            <RouterLink to="listado-clientes">Ir a inicio</RouterLink>
         </div>
         <Heading>Agregar Cliente</Heading>
 
