@@ -1,11 +1,13 @@
 <script setup>
-import { useRouter } from 'vue-router';
+import { useRouter, useRoute } from 'vue-router';
 import ClienteService from "../services/ClienteService";
 import RouterLink from "../components/UI/RouterLink.vue";
 import Heading from "../components/UI/Heading.vue";
 import { FormKit } from "@formkit/vue";
 
 const router = useRouter()
+const route = useRoute()
+console.log(route.params)
 const handleSubmit = (data) => {
 
 };
