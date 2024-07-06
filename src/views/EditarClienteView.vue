@@ -21,7 +21,11 @@ onMounted(() => {
 })
 
 const handleSubmit = (data) => {
-
+    ClienteService.actualizarCliente(id, data)
+        .then(respuesta => {
+            router.push({ name: 'listado-clientes' })
+        })
+        .catch(error => console.log(error))
 };
 </script>
 <template>
@@ -33,7 +37,7 @@ const handleSubmit = (data) => {
 
         <div class="mx-auto mt-10 bg-white shadow">
             <div class="mx-auto md:w-2/3 py-20 px-6">
-                <FormKit type="form" submit-label="Agregar Cliente" @submit="handleSubmit"
+                <FormKit type="form" submit-label="Editar Cliente" @submit="handleSubmit"
                     incomplete-message="No se pudo enviar, revisa los mensajes." :value="formData">
                     <FormKit type="text" label="Nombre" name="nombre" v-model="formData.nombre"
                         placeholder="Nombre del cliente" validation="required" :validation-messages="{
