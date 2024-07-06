@@ -10,14 +10,12 @@ const router = useRouter()
 const route = useRoute()
 
 const { id } = route.params;
-const formData = reactive({
-    nombre: ''
-});
+const formData = reactive({});
 
 onMounted(() => {
     ClienteService.obtenerCliente(id)
         .then(({ data }) => {
-            formData.nombre = data.nombre
+            Object.assign(formData, data)
         })
         .catch(({ error }) => console.log(error));
 })
@@ -42,26 +40,29 @@ const handleSubmit = (data) => {
                             required: 'El nombre del cliente es obligatorio',
                         }" />
 
-                    <FormKit type="text" label="Apellido" name="apellido" placeholder="Apellido del cliente"
-                        validation="required" :validation-messages="{
+                    <FormKit type="text" label="Apellido" name="apellido" v-model="formData.apellido"
+                        placeholder="Apellido del cliente" validation="required" :validation-messages="{
                             required: 'El apellido del cliente es obligatorio',
                         }" />
 
-                    <FormKit type="email" label="Email" name="email" placeholder="Email del cliente"
-                        validation="required|email" :validation-messages="{
+                    <FormKit type="email" label="Email" name="email" v-model="formData.email"
+                        placeholder="Email del cliente" validation="required|email" :validation-messages="{
                             required: 'El email del cliente es obligatorio',
                             email: 'Coloca un email válido',
                         }" />
 
-                    <FormKit type="text" label="Teléfono" name="telefono" placeholder="Teléfono XXX-XXX-XXX"
-                        validation="?matches:/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/" :validation-messages="{
+                    <FormKit type="text" label="Teléfono" name="telefono" v-model="formData.telefono"
+                        placeholder="Teléfono XXX-XXX-XXX" validation="?matches:/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/"
+                        :validation-messages="{
                             required: 'El teléfono del cliente es obligatorio',
                             matches: 'El formato no es válido.',
                         }" />
 
-                    <FormKit type="text" label="Empresa" name="empresa" placeholder="Empresa del cliente" />
+                    <FormKit type="text" label="Empresa" name="empresa" v-model="formData.empresa"
+                        placeholder="Empresa del cliente" />
 
-                    <FormKit type="text" label="Puesto" name="puesto" placeholder="Puesto del cliente" />
+                    <FormKit type="text" label="Puesto" name="puesto" v-model="formData.puesto"
+                        placeholder="Puesto del cliente" />
                 </FormKit>
             </div>
         </div>
