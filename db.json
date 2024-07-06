@@ -8,6 +8,15 @@
       "telefono": "777-503-7364",
       "empresa": "izzi Telecom",
       "puesto": "Desarrollador fullstack"
+    },
+    {
+      "id": "7e3b",
+      "nombre": "Daniel",
+      "apellido": "Rodriguez Herrera",
+      "email": "daniel199907@gmail.com",
+      "telefono": "777-503-7364",
+      "empresa": "izzi Telecom",
+      "puesto": "Desarrollador fullstack"
     }
   ]
 }

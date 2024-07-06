@@ -1,13 +1,17 @@
 <script setup>
 import axios from "axios";
+import { useRouter } from 'vue-router'
 import RouterLink from "../components/UI/RouterLink.vue";
 import Heading from "../components/UI/Heading.vue";
 import { FormKit } from "@formkit/vue";
 
+const router = useRouter()
 const handleSubmit = (data) => {
     axios
         .post("http://localhost:3000/clientes", data)
-        .then((respuesta) => console.log(respuesta))
+        .then((respuesta) => {
+            router.push({ name: 'inicio' })
+        })
         .catch((error) => console.log(error));
 };
 </script>
