@@ -1,17 +1,17 @@
 <script setup>
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
 import RouterLink from "../components/UI/RouterLink.vue";
 import Heading from "../components/UI/Heading.vue";
 import axios from "axios";
 
+const clientes = ref([]);
 onMounted(() => {
-  axios
-    .get("http://localhost:3000/clientes")
-    .then(({ data }) => {
-      console.log(data);
-    })
+  axios("http://localhost:3000/clientes")
+    .then(({ data }) => (clientes.value = data))
     .catch((error) => console.log(error));
 });
+
+const 
 </script>
 <template>
   <div>
