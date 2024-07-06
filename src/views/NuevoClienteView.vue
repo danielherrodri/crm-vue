@@ -1,12 +1,15 @@
 <script setup>
-import RouterLink from '../components/UI/RouterLink.vue'
-import Heading from '../components/UI/Heading.vue'
-import { FormKit } from '@formkit/vue'
+import axios from "axios";
+import RouterLink from "../components/UI/RouterLink.vue";
+import Heading from "../components/UI/Heading.vue";
+import { FormKit } from "@formkit/vue";
 
 const handleSubmit = (data) => {
-    console.log('Entrandaaa', data)
-}
-
+    axios
+        .post("http://localhost:3000/clientes", data)
+        .then((respuesta) => console.log(respuesta))
+        .catch((error) => console.log(error));
+};
 </script>
 <template>
     <div>
@@ -20,25 +23,30 @@ const handleSubmit = (data) => {
                 <FormKit type="form" submit-label="Agregar Cliente" @submit="handleSubmit"
                     incomplete-message="No se pudo enviar, revisa los mensajes.">
                     <FormKit type="text" label="Nombre" name="nombre" placeholder="Nombre del cliente"
-                        validation="required"
-                        :validation-messages="{ required: 'El nombre del cliente es obligatorio' }" />
+                        validation="required" :validation-messages="{
+                            required: 'El nombre del cliente es obligatorio',
+                        }" />
 
                     <FormKit type="text" label="Apellido" name="apellido" placeholder="Apellido del cliente"
-                        validation="required"
-                        :validation-messages="{ required: 'El apellido del cliente es obligatorio' }" />
+                        validation="required" :validation-messages="{
+                            required: 'El apellido del cliente es obligatorio',
+                        }" />
 
                     <FormKit type="email" label="Email" name="email" placeholder="Email del cliente"
-                        validation="required|email"
-                        :validation-messages="{ required: 'El email del cliente es obligatorio', email: 'Coloca un email válido' }" />
+                        validation="required|email" :validation-messages="{
+                            required: 'El email del cliente es obligatorio',
+                            email: 'Coloca un email válido',
+                        }" />
 
                     <FormKit type="text" label="Teléfono" name="telefono" placeholder="Teléfono XXX-XXX-XXX"
-                        validation="?matches:/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/"
-                        :validation-messages="{ required: 'El teléfono del cliente es obligatorio', matches: 'El formato no es válido.' }" />
+                        validation="?matches:/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/" :validation-messages="{
+                            required: 'El teléfono del cliente es obligatorio',
+                            matches: 'El formato no es válido.',
+                        }" />
 
                     <FormKit type="text" label="Empresa" name="empresa" placeholder="Empresa del cliente" />
 
                     <FormKit type="text" label="Puesto" name="puesto" placeholder="Puesto del cliente" />
-
                 </FormKit>
             </div>
         </div>
